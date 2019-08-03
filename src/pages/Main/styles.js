@@ -1,4 +1,12 @@
+import { Animated } from 'react-native';
 import styled from 'styled-components/native';
+
+// Styled SafeArea iPhoneX e outros for bugs
+// Evita-se o uso de Tricks para manter o layout ao rotacionar
+export const SafeAreaView = styled.SafeAreaView`
+  flex: 1;
+  background: #8B10AE;
+`;
 
 export const Container = styled.View`
   flex: 1;
@@ -12,7 +20,7 @@ export const Content = styled.View`
   z-index: 5;
 `;
 
-export const Card = styled.View`
+export const Card = styled(Animated.View)`
   flex: 1;
   background: #FFF;
   border-radius: 4px;
@@ -21,20 +29,8 @@ export const Card = styled.View`
   position: absolute;
   left: 0;
   right: 0;
-  top: 380;
+  top: 0;
 `;
-
-// export const Card = styled(Animated.View)`
-//   flex: 1;
-//   background: #FFF;
-//   border-radius: 4px;
-//   margin: 0 20px;
-//   height: 100%;
-//   position: absolute;
-//   left: 0;
-//   right: 0;
-//   top: 0;
-// `;
 
 export const CardHeader = styled.View`
   flex-direction: row;

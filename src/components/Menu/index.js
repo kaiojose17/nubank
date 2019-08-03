@@ -9,7 +9,13 @@ import {
 
 export default function Menu({ translateY }) {
   return (
-    <Container>
+    <Container style={{
+      opacity: translateY.interpolate({
+        inputRange: [0, 150],
+        outputRange: [0, 1],
+      }),
+    }}
+    >
       <Code>
         <QRCode
           value="https://rocketseat.com.br"
@@ -38,9 +44,9 @@ export default function Menu({ translateY }) {
         </NavItem>
       </Nav>
 
-      {/* <SignOutButton onPress={() => {}}>
+      <SignOutButton onPress={() => {}}>
         <SignOutButtonText>SAIR DO APP</SignOutButtonText>
-      </SignOutButton> */}
+      </SignOutButton>
     </Container>
   );
 }
